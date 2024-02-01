@@ -1,0 +1,17 @@
+[
+    {
+        "id": "Lore8844",
+        "name": "Lorelei",
+        "lastName": "Booksworth",
+        "email": "Lorelei_Book@bookHaven.com",
+        "password": "11aa@bc3B",
+        "phone": "112233445566",
+        "schedule": [
+            "Monday",
+            "Saturday",
+            "8 am",
+            "6 pm"
+        ],
+        "job": "Librarian"
+    }
+]

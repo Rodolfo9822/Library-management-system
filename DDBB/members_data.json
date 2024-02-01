@@ -1,0 +1,15 @@
+[
+    {
+        "id": "Lore8844",
+        "name": "Lorelei",
+        "lastName": "Booksworth",
+        "email": "Lorelei_Book@bookHaven.com",
+        "password": "11aa@bc3B",
+        "phone": "112233445566",
+        "registration": "30/01/2024",
+        "address": "123 Dream Street Imaginary City, IL 56789 USA",
+        "blocked": "False",
+        "debt": 0,
+        "date_borrowed": ""
+    }
+]
