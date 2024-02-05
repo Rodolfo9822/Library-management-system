@@ -12,10 +12,18 @@ def member_path():
     return ""
 
 
-def to_get_data(path):
+def account_exist(employee, user_email, user_pass):
+    email = employee["email"]
+    password = employee["password"]
+    if email == user_email and password == user_pass:
+        return True, employee["name"], employee["lastName"]
+
+
+def to_get_data(path, user_email, user_pass):
     file = Path(path).read_text(encoding="utf-8")
-    for info in json.loads(file):
-        return info
+    for employee in json.loads(file):
+        exist = account_exist(employee, user_email, user_pass)
+    return exist
 
 
 def sign_in(message):
@@ -24,6 +32,7 @@ def sign_in(message):
     password = input("Write your password: ")
     account = account_valid(email)
     if account:
-        data = to_get_data(employee_path())
+        data = to_get_data(employee_path(), email, password)
+        return data
     else:
         print("Invalid email, please check out your email")
