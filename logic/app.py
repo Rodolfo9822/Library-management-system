@@ -4,4 +4,15 @@ from logic import main_member
 
 
 def start():
-    main_employee() if identify_yourself() == 1 else main_member()
+    state = True
+    while (state):
+        option = identify_yourself()
+        match option:
+            case 1:
+                main_employee()
+            case 2:
+                main_member()
+            case 3:
+                state = False
+            case _:
+                pass

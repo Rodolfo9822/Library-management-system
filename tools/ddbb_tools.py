@@ -1,5 +1,4 @@
 from functions import account_valid
-from messages import message_to_employee
 import json
 from pathlib import Path
 
@@ -16,7 +15,7 @@ def account_exist(employee, user_email, user_pass):
     email = employee["email"]
     password = employee["password"]
     if email == user_email and password == user_pass:
-        return True, employee["name"], employee["lastName"]
+        return True, employee
 
 
 def to_get_data(path, user_email, user_pass):
@@ -27,7 +26,7 @@ def to_get_data(path, user_email, user_pass):
 
 
 def sign_in(message):
-    message_to_employee(message)
+    print(message)
     email = input("Write your email: ")
     password = input("Write your password: ")
     account = account_valid(email)
@@ -36,3 +35,4 @@ def sign_in(message):
         return data
     else:
         print("Invalid email, please check out your email")
+        return False, ""
