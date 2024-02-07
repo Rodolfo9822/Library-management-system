@@ -1,4 +1,7 @@
 from abc import ABC
+from tools import show_all_books, book_selected, better_presentation
+from functions import book_id_ok
+from messages import error_message
 
 
 class Person(ABC):
@@ -11,13 +14,26 @@ class Person(ABC):
         self.phone = phone
 
     def adding(self):
-        pass
+        option = input("""To add a new book to the data base you have write Yes and you will be filling up the fields.
+if you want to cancel the action, write No.
+                        """)
+        if option.capitalize() == "Yes":
+            print("I'm here")
+        elif option.capitalize() == "No":
+            print("\nYou've cancel the action, you got back to the menu")
+        else:
+            error_message("You haven't selected one of the options")
 
     def removing(self):
         pass
 
     def searchFor(self):
-        pass
+        book_id = input(
+            "Please, to write the book id would you want to look for? ")
+        if (book_id_ok(book_id)):
+            book = book_selected(book_id)[0]
+            print(f"\nThe book you've selected is {book['title']}")
+            better_presentation(book)
 
     def get_id(self):
         return self._id
@@ -59,14 +75,8 @@ class Employee(Person):
         self.schedule = schedule
         self.job = job
 
-    def adding(self):
-        pass
-
-    def removing(self):
-        pass
-
-    def search_for(self):
-        pass
+    def whole_book_DDBB(self):
+        show_all_books()
 
     def set_schedule(self, new_schedule):
         self.schedule = new_schedule
@@ -114,15 +124,6 @@ class Member(Person):
         self.blocked = blocked
         self.debt = debt
         self.date_borrowed = date_borrowed
-
-    def adding(self):
-        pass
-
-    def removing(self):
-        pass
-
-    def search_for(self):
-        pass
 
     def get_registration_date(self):
         return self.registration_date

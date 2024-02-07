@@ -6,11 +6,11 @@ from tools import Mistake
 
 def execute_action(choice, user):
     match choice:
-        case 1: print("")
-        case 2: print("")
+        case 1: user.searchFor()
+        case 2: user.whole_book_DDBB()
         case 3: print("")
         case 4: print("")
-        case 5: print("")
+        case 5: user.adding()
         case 6: print("")
         case 7: print("")
         case 8: print("")
@@ -24,10 +24,7 @@ def execute_action(choice, user):
 
 
 def bunch_of_choices(choice, user):
-    if choice >= 1 and choice <= 15:
-        execute_action(choice, user)
-    else:
-        raise Mistake("You haven't selected one of the options")
+    execute_action(choice, user)
 
 
 def building(data):
@@ -39,11 +36,16 @@ def main_employee():
         "Welcome to the system of the library, please typing your email and password to get access to the sytem")
     if state:
         user = building(data)
-
     while (state):
         print("")
         try:
             choice = employee_menu(user.get_name(), user.get_last_name())
-            bunch_of_choices(choice, user)
+            if choice >= 1 and choice <= 15:
+                if choice == 15:
+                    state = False
+                else:
+                    bunch_of_choices(choice, user)
+            else:
+                raise Mistake("You haven't selected one of the options")
         except ValueError:
             error_message("You have written words")
