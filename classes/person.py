@@ -1,6 +1,6 @@
 from abc import ABC
 from tools import show_all_books, book_selected, better_presentation
-from functions import book_id_ok
+from functions import book_id_ok, book_fields
 from messages import error_message
 
 
@@ -18,7 +18,7 @@ class Person(ABC):
 if you want to cancel the action, write No.
                         """)
         if option.capitalize() == "Yes":
-            print("I'm here")
+            book_fields()
         elif option.capitalize() == "No":
             print("\nYou've cancel the action, you got back to the menu")
         else:
