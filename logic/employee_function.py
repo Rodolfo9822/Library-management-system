@@ -8,9 +8,9 @@ def execute_action(choice, user):
     match choice:
         case 1: user.searchFor()
         case 2: user.whole_book_DDBB()
-        case 3: print("")
+        case 3: user.whole_borrowed_book()
         case 4: user.adding()
-        case 5: print("")
+        case 5: user.edit_book()
         case 6: print("")
         case 7: print("")
         case 8: print("")

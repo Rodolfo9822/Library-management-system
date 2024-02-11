@@ -1,5 +1,5 @@
 from abc import ABC
-from tools import show_all_books, book_selected, better_presentation
+from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element
 from functions import book_id_ok, book_fields
 from messages import error_message
 
@@ -14,15 +14,7 @@ class Person(ABC):
         self.phone = phone
 
     def adding(self):
-        option = input("""To add a new book to the data base you have write Yes and you will be filling up the fields.
-if you want to cancel the action, write No.
-                        """)
-        if option.capitalize() == "Yes":
-            book_fields()
-        elif option.capitalize() == "No":
-            print("\nYou've cancel the action, you got back to the menu")
-        else:
-            error_message("You haven't selected one of the options")
+        print("")
 
     def removing(self):
         pass
@@ -34,6 +26,8 @@ if you want to cancel the action, write No.
             book = book_selected(book_id)[0]
             print(f"\nThe book you've selected is {book['title']}")
             better_presentation(book)
+        else:
+            print("\nYour choice don't exist, please, check out the ID")
 
     def get_id(self):
         return self._id
@@ -75,8 +69,22 @@ class Employee(Person):
         self.schedule = schedule
         self.job = job
 
+    def adding(self):
+        option = input("""To add a new book to the data base you have write Yes and you will be filling out the fields.
+if you want to cancel the action, write No.
+                        """)
+        if option.capitalize() == "Yes":
+            book_fields()
+        elif option.capitalize() == "No":
+            print("\nYou've cancel the action, you got back to the menu")
+        else:
+            error_message("You haven't selected one of the options")
+
     def whole_book_DDBB(self):
-        show_all_books()
+        show_data(books_path())
+
+    def whole_borrowed_book(self):
+        show_data(borrowed_path())
 
     def set_schedule(self, new_schedule):
         self.schedule = new_schedule
@@ -106,7 +114,13 @@ class Employee(Person):
         pass
 
     def edit_book(self):
-        pass
+        _id = input(
+            "If you want to changes the book information, please write its id without ")
+        state, deleted_book = delete_element(_id, books_path())
+        if state:
+            better_presentation(deleted_book[0])
+            print("\n You actually can use the information about to rewrite once again, be careful to changes data")
+            book_fields()
 
     def get_user_data(self):
         pass

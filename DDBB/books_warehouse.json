@@ -1,1 +1,24 @@
-[{"id": "atomic1122J", "title": "Atomic Habits", "author": "James Clear", "pages": 320, "type": "Hardcover", "genre": "Self-help book", "quantity": 8, "available": "It's available", "audioBook": "No"}, {"id": "thefina8123", "title": "The Final Empire", "author": "Brandon Sanderson", "pages": 672, "type": "Hardcover", "genre": "Fantasy Fiction", "quantity": 12, "available": "It's available", "audioBook": "No"}, {"id": "qwe143", "title": "qwe", "author": "qweqwewqe", "pages": 123123, "type": "false", "genre": "asdasdsa", "quantity": 87, "available": "It's available"}]
+[
+    {
+        "id": "atomic1122J",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "pages": 320,
+        "type": "Hardcover",
+        "genre": "Self-help book",
+        "quantity": 8,
+        "available": "It's available",
+        "audioBook": "No"
+    },
+    {
+        "id": "TheFina156",
+        "title": "The Final Empire",
+        "author": "Brandon Sanderson",
+        "pages": 672,
+        "type": "Hardcover",
+        "genre": "Fantasy, Fiction, Adventure",
+        "quantity": 20,
+        "available": "It's available",
+        "audiobook": "No"
+    }
+]

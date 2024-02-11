@@ -20,6 +20,37 @@ def account_valid(email):
     if (re.fullmatch(regex, email)):
         return True
 
+
+def show_data(path):
+    books = use_data_base(path)
+    for book in books:
+        better_presentation(book)
+
+
+def does_it_exist(_id, path):
+    data = use_data_base(path)
+    return list(filter(lambda el: el["id"] == _id, data))
+
+
+def delete_element(_id, path):
+    is_there = does_it_exist(_id, path)
+    if (is_there):
+        old_info = use_data_base(path)
+        new_DDBB = list(filter(lambda x: x["id"] != _id, old_info))
+        add_new_data(path, new_DDBB)
+        return (True, is_there)
+    else:
+        print(f"\nError, The id you've written doesn't exist")
+        return (False, "")
+
+
+def saving_data(data, path, message):
+    whole_data = use_data_base(path)
+    whole_data.append(data)
+    add_new_data(path, whole_data)
+    print(f"\n{message}")
+
+
 # Path JSON
 
 
@@ -33,6 +64,10 @@ def members_path():
 
 def books_path():
     return "C:/Users/PC/Desktop/Python/Projects/Library_Management_System/DDBB/books_warehouse.json"
+
+
+def borrowed_path():
+    return "C:/Users/PC/Desktop/Python/Projects/Library_Management_System/DDBB/borrowed_books_warehouse.json"
 
 # DDBB functions for employees
 
@@ -65,11 +100,6 @@ def sign_in(message):
 
 
 # DDBB functions for books
-def show_all_books():
-    books = use_data_base(books_path())
-    for book in books:
-        better_presentation(book)
-
 
 def better_presentation(book):
     print("")
@@ -80,9 +110,3 @@ def better_presentation(book):
 def book_selected(_id):
     books = use_data_base(books_path())
     return list(filter(lambda b: b["id"] == _id, books))
-
-
-def saving_book(data):
-    books = use_data_base(books_path())
-    books.append(data)
-    add_new_data(books_path(), books)
