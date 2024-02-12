@@ -1,6 +1,6 @@
 from abc import ABC
 from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element
-from functions import book_id_ok, book_fields
+from functions import book_id_ok, book_fields, employee_fields
 from messages import error_message
 
 
@@ -101,11 +101,11 @@ if you want to cancel the action, write No.
     def new_user(self):
         pass
 
-    def delete_user(self):
+    def user_deleted(self):
         pass
 
     def new_employee(self):
-        pass
+        employee_fields()
 
     def fire_employee(self):
         pass
@@ -113,9 +113,18 @@ if you want to cancel the action, write No.
     def details_borrowed_books(self):
         pass
 
+    def book_deleted(self):
+        choice = input(
+            "Are you actually sure to delete a book?, to cancel the action you have to write No if you want to continue writing Yes. ")
+        if choice.capitalize() == "Yes":
+            book_id = input("To write the book id ")
+            outcome, book = delete_element(book_id, books_path())
+            if outcome:
+                print(f"\nYou've removed the book {book[0]['title']}")
+
     def edit_book(self):
         _id = input(
-            "If you want to changes the book information, please write its id without ")
+            "If you want to changes the book information, please write its id ")
         state, deleted_book = delete_element(_id, books_path())
         if state:
             better_presentation(deleted_book[0])

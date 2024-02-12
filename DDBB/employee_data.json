@@ -13,5 +13,15 @@
             "6 pm"
         ],
         "job": "Librarian"
+    },
+    {
+        "id": "Juan.541168",
+        "name": "Juan",
+        "lastName": "Jhonson",
+        "email": "juan@outlook.com",
+        "password": "assad#!#@12",
+        "phone": "112211221122",
+        "schedule": "monday-friday, 8am - 4 pm",
+        "job": "librarian"
     }
 ]
