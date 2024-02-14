@@ -1,12 +1,11 @@
 import re
 import json
-from pathlib import Path
 
 # Global functions
 
 
 def use_data_base(path):
-    with open(path, encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -72,34 +71,32 @@ def borrowed_path():
 # DDBB functions for employees
 
 
-def validate_account(user_email, user_pass):
-    file = use_data_base(employees_path())
-    for employee in file:
-        exist = account_exist(employee, user_email, user_pass)
-    return exist
-
-
-def account_exist(employee, user_email, user_pass):
-    email = employee["email"]
-    password = employee["password"]
-    if email == user_email and password == user_pass:
-        return True, employee
-
-
 def sign_in(message):
     print(message)
     email = input("Write your email: ")
     password = input("Write your password: ")
     account = account_valid(email)
     if account:
-        data = validate_account(email, password)
-        return data
+        outcome = validate_account(email, password)
+        if outcome is not None:
+            return True, outcome
+        else:
+            return False, ""
     else:
         print("Invalid email, please check out your email")
         return False, ""
 
 
+def validate_account(user_email, user_pass):
+    file = use_data_base(employees_path())
+    for employee in file:
+        email = employee["email"]
+        password = employee["password"]
+        if email == user_email and password == user_pass:
+            return employee
+
 # DDBB functions for books
+
 
 def better_presentation(book):
     print("")

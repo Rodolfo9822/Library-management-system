@@ -23,5 +23,15 @@
         "phone": "112211221122",
         "schedule": "monday-friday, 8am - 4 pm",
         "job": "librarian"
+    },
+    {
+        "id": "Rebe.629210",
+        "name": "Rebeca",
+        "lastName": "Altamar",
+        "email": "rebeca_Book@bookHaven.com",
+        "password": "112233",
+        "phone": "112233445566",
+        "schedule": "I don't know",
+        "job": "Librarian"
     }
 ]
