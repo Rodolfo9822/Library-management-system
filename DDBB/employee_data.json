@@ -1,0 +1,37 @@
+[
+    {
+        "id": "Lore8844",
+        "name": "Lorelei",
+        "lastName": "Booksworth",
+        "email": "Lorelei_Book@bookHaven.com",
+        "password": "11aa@bc3B",
+        "phone": "112233445566",
+        "schedule": [
+            "Monday",
+            "Saturday",
+            "8 am",
+            "6 pm"
+        ],
+        "job": "Librarian"
+    },
+    {
+        "id": "Rebe.629210",
+        "name": "Rebeca",
+        "lastName": "Altamar",
+        "email": "rebeca_Book@bookHaven.com",
+        "password": "112233",
+        "phone": "112233445566",
+        "schedule": "I don't know",
+        "job": "Librarian"
+    },
+    {
+        "id": "Juan.541168",
+        "name": "Sergio",
+        "lastName": "De la Paz",
+        "email": "Sergio_book@bookHaven.com",
+        "password": "009988",
+        "phone": "223344556677",
+        "schedule": "Monday - Saturday, 9pm - 4pm",
+        "job": "Librarian"
+    }
+]
