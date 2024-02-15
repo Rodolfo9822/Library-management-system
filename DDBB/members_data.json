@@ -8,7 +8,33 @@
         "phone": "112233445566",
         "registration": "30/01/2024",
         "address": "123 Dream Street Imaginary City, IL 56789 USA",
-        "blocked": "False",
+        "blocked": "No blocked",
+        "debt": 0,
+        "date_borrowed": ""
+    },
+    {
+        "id": "Elizabe0505",
+        "name": "Elizabeth",
+        "lastName": "Smith",
+        "email": "Elizabeth@email.com",
+        "password": "112233",
+        "phone": "221133445566",
+        "registration": "2024-02-15",
+        "address": "456 Enchanted Lane Mysticville, CA 12345",
+        "blocked": "No blocked",
+        "debt": 0,
+        "date_borrowed": ""
+    },
+    {
+        "id": "asdasda8095",
+        "name": "James",
+        "lastName": "Brown",
+        "email": "james_11@email.com",
+        "password": "112233",
+        "phone": "112233445566",
+        "registration": "2024-02-15 ",
+        "address": "456 Enchanted Lane Mysticville, CA 12345",
+        "blocked": "No blocked",
         "debt": 0,
         "date_borrowed": ""
     }

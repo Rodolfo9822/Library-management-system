@@ -1,6 +1,6 @@
 from abc import ABC
-from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element, employees_path
-from functions import book_id_ok, book_fields, employee_fields
+from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element, employees_path, members_path, does_it_exist
+from functions import book_id_ok, book_fields, employee_fields, member_fields
 from messages import error_message
 
 
@@ -69,41 +69,6 @@ class Employee(Person):
         self.schedule = schedule
         self.job = job
 
-    def adding(self):
-        option = input("""To add a new book to the data base you have write Yes and you will be filling out the fields.
-if you want to cancel the action, write No.
-                        """)
-        if option.capitalize() == "Yes":
-            book_fields()
-        elif option.capitalize() == "No":
-            print("\nYou've cancel the action, you got back to the menu")
-        else:
-            error_message("You haven't selected one of the options")
-
-    def whole_book_DDBB(self):
-        show_data(books_path())
-
-    def whole_borrowed_book(self):
-        show_data(borrowed_path())
-
-    def set_schedule(self, new_schedule):
-        self.schedule = new_schedule
-
-    def get_schedule(self):
-        return self.schedule
-
-    def set_job(self, new_job):
-        self.job = new_job
-
-    def get_job(self):
-        return self.job
-
-    def new_user(self):
-        pass
-
-    def user_deleted(self):
-        pass
-
     def whole_employee_DDBB(self):
         show_data(employees_path())
 
@@ -112,7 +77,7 @@ if you want to cancel the action, write No.
 
     def edit_employee(self):
         decision = input(
-            "Are you actually sure to change the book information?, Write yes to proceed with , or you can write No to cancel the action. ")
+            "Are you actually sure to change the book information?, Write yes to proceed with , or you just write No to cancel the action. ")
         if decision.capitalize() == "Yes":
             _id = input("Write the employee id ")
             outcome, information = delete_element(_id, employees_path())
@@ -129,32 +94,77 @@ if you want to cancel the action, write No.
             if outcome:
                 print(f"You've fired {info[0]['name']} {info[0]['lastName']}")
 
+    def adding(self):
+        option = input(
+            """To add a new book to the data base you have write Yes and you will be filling out the fields. if you want to cancel the action, write No. """)
+        if option.capitalize() == "Yes":
+            book_fields()
+        elif option.capitalize() == "No":
+            print("\nYou've cancel the action, you got back to the menu")
+        else:
+            error_message("You haven't selected one of the options")
+
+    def whole_book_DDBB(self):
+        show_data(books_path())
+
+    def whole_borrowed_book(self):
+        show_data(borrowed_path())
+
+    def edit_book(self):
+        _id = input(
+            "If you want to changes the book information, please write its id ")
+        state, book_deleted = delete_element(_id, books_path())
+        if state:
+            better_presentation(book_deleted[0])
+            print(
+                "\n You actually can use the information about to rewrite it, be careful to change data")
+            book_fields(_id, True)
+
     def details_borrowed_books(self):
         pass
 
     def book_deleted(self):
         choice = input(
-            "Are you actually sure to delete a book?, to cancel the action you have to write No if you want to continue writing Yes. ")
+            "Are you actually sure to delete the book?, to cancel the action you have to write No if you want to continue writing Yes. ")
         if choice.capitalize() == "Yes":
             book_id = input("To write the book id ")
             outcome, book = delete_element(book_id, books_path())
             if outcome:
                 print(f"\nYou've removed the book {book[0]['title']}")
 
-    def edit_book(self):
-        _id = input(
-            "If you want to changes the book information, please write its id ")
-        state, deleted_book = delete_element(_id, books_path())
-        if state:
-            better_presentation(deleted_book[0])
-            print("\n You actually can use the information about to rewrite once again, be careful to changes data")
-            book_fields(_id, True)
+    def whole_member_DDBB(self):
+        show_data(members_path())
 
-    def get_user_data(self):
-        pass
+    def new_member(self):
+        member_fields()
 
     def edit_user(self):
-        pass
+        _id = input(
+            "If you want to changes the member information, please write their id ")
+        state, member_deleted = delete_element(_id, members_path())
+        if state:
+            better_presentation(member_deleted[0])
+            print(
+                "\n You actually can use the information about to rewrite them, be careful to change data")
+            member_fields(_id, True)
+
+    def look_member(self):
+        _id = input("Do you want to look for a member, write their id? ")
+        data = does_it_exist(_id, members_path())
+        if data:
+            better_presentation(data[0])
+        else:
+            error_message("The id you've provided doesn't exist")
+
+    def delete_member(self):
+        choice = input(
+            "Are you actually sure to delete the member?, to cancel the action you have to write No if you want to continue writing Yes. ")
+        if choice.capitalize() == "Yes":
+            member_id = input("To write the book id ")
+            outcome, member = delete_element(member_id, members_path())
+            if outcome:
+                print(
+                    f"\nYou've deleted the member {member[0]['name']} {member[0]['lastName']}")
 
 
 class Member(Person):

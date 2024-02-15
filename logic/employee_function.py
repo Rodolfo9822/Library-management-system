@@ -16,11 +16,11 @@ def execute_action(choice, user):
         case 8: user.new_employee()
         case 9: user.edit_employee()
         case 10: user.fire_employee()
-        case 11: print("")
-        case 12: print("")
-        case 13: print("")
-        case 14: print("")
-        case 15: print("")
+        case 11: user.whole_member_DDBB()
+        case 12: user.new_member()
+        case 13: user.edit_user()
+        case 14: user.look_member()
+        case 15: user.delete_member()
         case _: pass
 
 

@@ -64,7 +64,7 @@ def employees_path():
 
 
 def members_path():
-    return ""
+    return "C:/Users/PC/Desktop/Python/Projects/Library_Management_System/DDBB/members_data.json"
 
 
 def books_path():
