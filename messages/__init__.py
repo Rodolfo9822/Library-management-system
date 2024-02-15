@@ -1,1 +1,1 @@
-from .message_for import identify_yourself, employee_menu, error_message
+from .message_for import identify_yourself, employee_menu, error_message, member_menu

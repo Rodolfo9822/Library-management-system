@@ -132,7 +132,7 @@ def member_fields(likely_id="", editing=False):
         field_list.append("")
         if not is_there_mistakes(field_list):
             identifier = ["id", "name", "lastName", "email", "password", "phone",
-                          "registration", "address", "blocked", "debt", "date_borrowed"]
+                          "registration", "address", "blocked", "debt", "dateBorrowed"]
             message = "The member data has been stored correctly"
             save_data(field_list, identifier, members_path(), message)
         else:

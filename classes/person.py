@@ -17,7 +17,7 @@ class Person(ABC):
         print("")
 
     def removing(self):
-        pass
+        print()
 
     def searchFor(self):
         book_id = input(
@@ -168,7 +168,6 @@ class Employee(Person):
 
 
 class Member(Person):
-
     def __init__(self, _id, name, last_name, email, password, phone, registration_date, address, blocked, debt, date_borrowed):
         super().__init__(_id, name, last_name, email, password, phone)
         self.registration_date = registration_date
@@ -208,4 +207,4 @@ class Member(Person):
         pass
 
     def their_data(self):
-        return (self._id, self.name, self.last_name, self.email, self.password, self.phone, self.registration_date, self.address, self.blocked, self.debt, self.date_borrowed)
+        return {self._id, self.name, self.last_name, self.email, self.password, self.phone, self.registration_date, self.address, self.blocked, self.debt, self.date_borrowed}
