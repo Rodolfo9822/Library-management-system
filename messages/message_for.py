@@ -26,15 +26,16 @@ def employee_menu(name, last_name):
           4.- Adding a new book to the DDBB
           5.- Editing a book
           6.- Removing a book
-          7.- To make a new co-worker
-          8.- To editing a co-worker
-          9.- To remove co-worker
-          10.- Making a new member
-          11.- Editing a member
-          12.- Removing a member
-          13.- Looking at a member
-          14.- Looking at member DDBB
-          15.- To get out.
+          7.- To look at co-worker DDBB
+          8.- To make a new co-worker
+          9.- To editing a co-worker
+          10.- To remove co-worker
+          11.- Making a new member
+          12.- Editing a member
+          13.- Removing a member
+          14.- Looking at a member
+          15.- Looking at member DDBB
+          16.- To get out.
           """)
     return int(input("What would you want to do? "))
 

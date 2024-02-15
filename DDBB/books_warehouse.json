@@ -1,16 +1,5 @@
 [
     {
-        "id": "atomic1122J",
-        "title": "Atomic Habits",
-        "author": "James Clear",
-        "pages": 320,
-        "type": "Hardcover",
-        "genre": "Self-help book",
-        "quantity": 8,
-        "available": "It's available",
-        "audioBook": "No"
-    },
-    {
         "id": "TheFina156",
         "title": "The Final Empire",
         "author": "Brandon Sanderson",
@@ -20,5 +9,16 @@
         "quantity": 20,
         "available": "It's available",
         "audiobook": "No"
+    },
+    {
+        "id": "atomic1122J",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "pages": 320,
+        "type": "Paperback",
+        "genre": "Self-help, motivation.",
+        "quantity": 20,
+        "available": "It's available",
+        "audiobook": "Yes"
     }
 ]

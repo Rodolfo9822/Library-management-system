@@ -12,14 +12,15 @@ def execute_action(choice, user):
         case 4: user.adding()
         case 5: user.edit_book()
         case 6: user.book_deleted()
-        case 7: user.new_employee()
-        case 8: print("")
-        case 9: print("")
-        case 10: print("")
+        case 7: user.whole_employee_DDBB()
+        case 8: user.new_employee()
+        case 9: user.edit_employee()
+        case 10: user.fire_employee()
         case 11: print("")
         case 12: print("")
         case 13: print("")
         case 14: print("")
+        case 15: print("")
         case _: pass
 
 
@@ -40,9 +41,10 @@ def main_employee():
     while (state):
         print("")
         try:
+            number_options = 16
             choice = employee_menu(user.get_name(), user.get_last_name())
-            if choice >= 1 and choice <= 15:
-                if choice == 15:
+            if choice >= 1 and choice <= number_options:
+                if choice == number_options:
                     state = False
                 else:
                     bunch_of_choices(choice, user)

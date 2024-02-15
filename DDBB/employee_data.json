@@ -15,16 +15,6 @@
         "job": "Librarian"
     },
     {
-        "id": "Juan.541168",
-        "name": "Juan",
-        "lastName": "Jhonson",
-        "email": "juan@outlook.com",
-        "password": "assad#!#@12",
-        "phone": "112211221122",
-        "schedule": "monday-friday, 8am - 4 pm",
-        "job": "librarian"
-    },
-    {
         "id": "Rebe.629210",
         "name": "Rebeca",
         "lastName": "Altamar",
@@ -32,6 +22,16 @@
         "password": "112233",
         "phone": "112233445566",
         "schedule": "I don't know",
+        "job": "Librarian"
+    },
+    {
+        "id": "Juan.541168",
+        "name": "Sergio",
+        "lastName": "De la Paz",
+        "email": "Sergio_book@bookHaven.com",
+        "password": "009988",
+        "phone": "223344556677",
+        "schedule": "Monday - Saturday, 9pm - 4pm",
         "job": "Librarian"
     }
 ]

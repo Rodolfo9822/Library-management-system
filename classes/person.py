@@ -1,5 +1,5 @@
 from abc import ABC
-from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element
+from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element, employees_path
 from functions import book_id_ok, book_fields, employee_fields
 from messages import error_message
 
@@ -104,11 +104,30 @@ if you want to cancel the action, write No.
     def user_deleted(self):
         pass
 
+    def whole_employee_DDBB(self):
+        show_data(employees_path())
+
     def new_employee(self):
         employee_fields()
 
+    def edit_employee(self):
+        decision = input(
+            "Are you actually sure to change the book information?, Write yes to proceed with , or you can write No to cancel the action. ")
+        if decision.capitalize() == "Yes":
+            _id = input("Write the employee id ")
+            outcome, information = delete_element(_id, employees_path())
+            if outcome:
+                better_presentation(information[0])
+                employee_fields(_id, True)
+
     def fire_employee(self):
-        pass
+        decision = input(
+            "Are you actually sure to fire an employee? write Yes to proceed with it, or write No to cancel the action ")
+        if decision.capitalize() == "Yes":
+            _id = input("Write the employee id ")
+            outcome, info = delete_element(_id, employees_path())
+            if outcome:
+                print(f"You've fired {info[0]['name']} {info[0]['lastName']}")
 
     def details_borrowed_books(self):
         pass
@@ -129,7 +148,7 @@ if you want to cancel the action, write No.
         if state:
             better_presentation(deleted_book[0])
             print("\n You actually can use the information about to rewrite once again, be careful to changes data")
-            book_fields()
+            book_fields(_id, True)
 
     def get_user_data(self):
         pass

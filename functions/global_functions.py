@@ -88,7 +88,6 @@ def employee_fields(likely_id="", editing=False):
         field_list.append(input(f"What's {name} phone number? "))
         field_list.append(input(f"What's {name} schedule? "))
         field_list.append(input(f"What's {name} job? "))
-        print(field_list, email)
         if not is_there_mistakes(field_list):
             identifier = ["id", "name", "lastName", "email",
                           "password", "phone", "schedule", "job"]

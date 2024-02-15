@@ -26,6 +26,12 @@ def show_data(path):
         better_presentation(book)
 
 
+def better_presentation(book):
+    print("")
+    for tag, info in book.items():
+        print(f"{tag.capitalize()}: {info}")
+
+
 def does_it_exist(_id, path):
     data = use_data_base(path)
     return list(filter(lambda el: el["id"] == _id, data))
@@ -96,12 +102,6 @@ def validate_account(user_email, user_pass):
             return employee
 
 # DDBB functions for books
-
-
-def better_presentation(book):
-    print("")
-    for tag, info in book.items():
-        print(f"{tag.capitalize()}: {info}")
 
 
 def book_selected(_id):
