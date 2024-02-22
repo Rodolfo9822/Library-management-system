@@ -1,12 +1,21 @@
 
-from tools import Mistake, sign_in, members_path
+from tools import Mistake, sign_in, members_path, better_presentation
 from classes import Member
 from messages import member_menu, error_message
 
 
+def my_information(data):
+    spread_info = data[0]
+    print(f"{spread_info['name']} {spread_info['lastName']}'s information")
+    better_presentation(spread_info)
+
+
 def execute_action(choice, user):
     match choice:
-        case 1: user.searchFor()
+        case 1: user.checkout_book_DDBB()
+        case 2: user.searchFor()
+        case 3: user.borrow_book()
+        case 4: my_information(user.their_data())
         case _: pass
 
 

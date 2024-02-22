@@ -1,5 +1,5 @@
 from abc import ABC
-from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element, employees_path, members_path, does_it_exist
+from tools import show_data, book_selected, better_presentation, books_path, borrowed_path, delete_element, employees_path, members_path, does_it_exist, saving_data
 from functions import book_id_ok, book_fields, employee_fields, member_fields
 from messages import error_message
 
@@ -176,6 +176,9 @@ class Member(Person):
         self.debt = debt
         self.date_borrowed = date_borrowed
 
+    def checkout_book_DDBB(self):
+        show_data(books_path())
+
     def get_registration_date(self):
         return self.registration_date
 
@@ -206,5 +209,17 @@ class Member(Person):
     def details_borrowed_books(self):
         pass
 
+    def borrow_book(self):
+        show_data(books_path())
+        choice = input("\nTo request borrowing a book, you just write the id ")
+        result = does_it_exist(choice, books_path())
+        book = result[0]
+        if book:
+            book["quantity"] = book["quantity"] - 1
+            delete_element(choice, books_path())
+            saving_data(book, books_path(), "your borrow has been successful")
+        else:
+            error_message("The id doesn't exist")
+
     def their_data(self):
-        return {self._id, self.name, self.last_name, self.email, self.password, self.phone, self.registration_date, self.address, self.blocked, self.debt, self.date_borrowed}
+        return [{"id": self._id, "name": self.name, "lastName": self.last_name, "Email": self.email, "password": self.password, "phone": self.phone, "Registration date": self.registration_date, "Address": self.address, "Blocked": self.blocked, "Debt": self.debt, "borrowed": self.date_borrowed}]

@@ -44,10 +44,9 @@ def member_menu(name, last_name):
     print(f"""Welcome {name} {last_name} to the Book Haven library!!!, below it, you actually can find the menu, immediately you write the option number you will get access. 
          1.- Seeing the whole library
          2.- Looking for a book 
-         3.- Checking out my data base
-         4.- Borrowing a book
-         5.- Changing information of my account
-          
+         3.- Borrowing a book
+         4.- Checking out my information
+         5.- Getting out from the system
           """)
     return int(input("What would you want to do? "))
 
