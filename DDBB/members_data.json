@@ -10,7 +10,7 @@
         "address": "123 Dream Street Imaginary City, IL 56789 USA",
         "blocked": "No blocked",
         "debt": 0,
-        "date_borrowed": ""
+        "dateBorrowed": ""
     },
     {
         "id": "Elizabe0505",
@@ -23,7 +23,7 @@
         "address": "456 Enchanted Lane Mysticville, CA 12345",
         "blocked": "No blocked",
         "debt": 0,
-        "date_borrowed": ""
+        "dateBorrowed": ""
     },
     {
         "id": "asdasda8095",
@@ -36,6 +36,6 @@
         "address": "456 Enchanted Lane Mysticville, CA 12345",
         "blocked": "No blocked",
         "debt": 0,
-        "date_borrowed": ""
+        "dateBorrowed": ""
     }
 ]

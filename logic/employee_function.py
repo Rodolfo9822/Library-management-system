@@ -1,7 +1,7 @@
 from tools import sign_in
 from messages import employee_menu, error_message
 from classes import Employee
-from tools import Mistake
+from tools import Mistake, employees_path
 
 
 def execute_action(choice, user):
@@ -35,7 +35,7 @@ def building(data):
 def main_employee():
     print("")
     state, data = sign_in(
-        "Welcome to the system of the library, please typing your email and password to get access to the sytem")
+        "Book Haven system, please typing your email and password to get access to the sytem", employees_path())
     if state:
         user = building(data)
     while (state):

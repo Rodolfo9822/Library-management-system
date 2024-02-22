@@ -77,13 +77,13 @@ def borrowed_path():
 # DDBB functions for employees
 
 
-def sign_in(message):
+def sign_in(message, path):
     print(message)
     email = input("Write your email: ")
     password = input("Write your password: ")
     account = account_valid(email)
     if account:
-        outcome = validate_account(email, password)
+        outcome = validate_account(email, password, path)
         if outcome is not None:
             return True, outcome
         else:
@@ -93,8 +93,8 @@ def sign_in(message):
         return False, ""
 
 
-def validate_account(user_email, user_pass):
-    file = use_data_base(employees_path())
+def validate_account(user_email, user_pass, path):
+    file = use_data_base(path)
     for employee in file:
         email = employee["email"]
         password = employee["password"]
